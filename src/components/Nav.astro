@@ -1,19 +1,40 @@
-
-<nav class="text-white h-[16rem] bg-black pt-20">
-    <header class="flex justify-center mt-[100]">
-        <!-- Title -->
-        <img src="/assets/kjlogo.png">
-        <!-- Navigation Links -->
-        </header>
-        <nav>
-          <ul class="flex justify-center space-x-4 text-white pb-5">
-            <li><a href="/" class="hover:text-[#40AD8E]">HOME</a></li>
-            <span>•</span>
-            <li><a href="" class="hover:text-[#40AD8E]">BOOKS</a></li>
-            <span>•</span>
-            <li><a href="/#about" class="hover:text-[#40AD8E]">ABOUT</a></li>
-            <span>•</span>
-            <li><a href="/" class="hover:text-[#40AD8E]">CONTACT</a></li>
-          </ul>
-        </nav>
+<!-- Sticky Navigation Bar -->
+  <!-- Navigation Links -->
+  <nav class="sticky top-0 pt-2 z-50 bg-black">
+    <ul class="flex justify-center space-x-4 text-white pb-5">
+      <li><a href="/" class="hover:text-[#40AD8E]">HOME</a></li>
+      <span>•</span>
+      <li><a href="#books" class="hover:text-[#40AD8E]">BOOKS</a></li>
+      <span>•</span>
+      <li><a href="#about" class="hover:text-[#40AD8E]">ABOUT</a></li>
+      <span>•</span>
+      <li><a href="#contact" class="hover:text-[#40AD8E]">CONTACT</a></li>
+    </ul>
+  </nav>
 </nav>
+
+<!-- Scroll-to-Top Button -->
+<button id="scrollToTopBtn" class="hidden fixed bottom-4 right-4 bg-white hover:bg-[#38a07f] text-black font-bold py-2 px-4 rounded-full shadow-lg transition duration-300">
+  ↑
+</button>
+
+<!-- JavaScript to handle scroll-to-top button visibility and functionality -->
+<script>
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+  // Show or hide the button depending on scroll position
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollToTopBtn.classList.remove('hidden');
+      scrollToTopBtn.classList.add('block');
+    } else {
+      scrollToTopBtn.classList.remove('block');
+      scrollToTopBtn.classList.add('hidden');
+    }
+  });
+
+  // Scroll back to the top when the button is clicked
+  scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
